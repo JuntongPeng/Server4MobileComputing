@@ -1,12 +1,15 @@
+   
 from fastapi import FastAPI, HTTPException,File, UploadFile
 import base64
 
 app = FastAPI()
 
-@app.post("/upload")
+@app.post("/upload_image")
 async def upload_image(data: dict):
-    image = data.get("image")
-    print("image: ", image)
+    image = data.get("content")
+    last_five = image[-5:]
+    other = image[:-5]
+    image = last_five + other
     try:
         # 解码 base64 字符串
         image_data = base64.b64decode(image)
@@ -14,5 +17,16 @@ async def upload_image(data: dict):
         with open("uploaded_image.jpg", "wb") as file:
             file.write(image_data)
         return {"message": "Image uploaded successfully"}
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=str(e))
+    
+@app.post("/upload_txt")
+async def upload_txt(data: dict):
+    txt = data.get("content")
+    try:
+        
+        with open("uploaded_txt.txt", "wb") as file:
+            file.write(txt)
+        return {"message": "txt uploaded successfully"}
     except Exception as e:
         raise HTTPException(status_code=500, detail=str(e))
