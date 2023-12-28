@@ -22,11 +22,10 @@ async def upload_image(data: dict):
     
 @app.post("/upload_txt")
 async def upload_txt(data: dict):
-    txt = data.get("content")
-    print(txt)
+    text = data.get("content")
     try:
-        with open("uploaded_txt.txt", "wb") as file:
-            file.write(txt)
+        with open("uploaded_text.txt", "w") as file:
+            file.write(text)
         return {"message": "txt uploaded successfully"}
     except Exception as e:
         raise HTTPException(status_code=500, detail=str(e))
