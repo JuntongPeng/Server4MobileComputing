@@ -29,10 +29,14 @@ if __name__ == "__main__":
     mode = args.mode
     
     ip = "0.0.0.0"
-    port = 8000
-    lan_ip = get_lan_ip()
-    print(f"Starting server at http://{lan_ip}:{port}")
+    
     if mode == "dumper":
+        port = 8001
+        lan_ip = get_lan_ip()
+        print(f"Starting server at http://{lan_ip}:{port}")
         uvicorn.run("dumper:app", host=ip, port=port, reload=True)
     elif mode == "storage":
+        port = 8000
+        lan_ip = get_lan_ip()
+        print(f"Starting server at http://{lan_ip}:{port}")
         uvicorn.run("main:app", host=ip, port=port, reload=True)
