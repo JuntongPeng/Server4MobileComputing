@@ -23,8 +23,8 @@ async def upload_image(data: dict):
 @app.post("/upload_txt")
 async def upload_txt(data: dict):
     txt = data.get("content")
+    print(txt)
     try:
-        
         with open("uploaded_txt.txt", "wb") as file:
             file.write(txt)
         return {"message": "txt uploaded successfully"}
