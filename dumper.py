@@ -11,7 +11,7 @@ async def upload_image(data: dict):
     if data_type == "image":
         target_suffix = "/upload_image"
     
-    elif data_type == "txt":
+    elif data_type == "text":
         target_suffix = "/upload_txt"
     else:
         raise HTTPException(status_code=501, detail="data_type not supported")

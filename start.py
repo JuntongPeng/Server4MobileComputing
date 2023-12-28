@@ -33,6 +33,6 @@ if __name__ == "__main__":
     lan_ip = get_lan_ip()
     print(f"Starting server at http://{lan_ip}:{port}")
     if mode == "dumper":
-        uvicorn.run("dumper:app", host=ip, port=port, reload=False)
+        uvicorn.run("dumper:app", host=ip, port=port, reload=True)
     elif mode == "storage":
-        uvicorn.run("main:app", host=ip, port=port, reload=False)
+        uvicorn.run("main:app", host=ip, port=port, reload=True)
