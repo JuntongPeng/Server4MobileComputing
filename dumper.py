@@ -6,7 +6,6 @@ app = FastAPI()
 @app.post("/upload")
 async def upload_image(data: dict):
     data_type = data.get("data_type")
-    data = data.get("content")
     
     if data_type == "image":
         target_suffix = "/upload_image"
