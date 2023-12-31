@@ -1,0 +1,21 @@
+<view class="container">
+<view style="align-self: flex-start; padding: 0.25cm;">
+
+<text>待传输内容预览：</text>
+</view>
+<view style="align-self: flex-start; padding: 0.25cm;">
+<text>输入文本</text>
+<input type="text" placeholder="请输入文本" bindinput="inputChange" />
+</view>
+<view style="align-self: flex-start; padding: 0.25cm;">
+<text>缓存中的照片：</text>
+<image src="{{photoPath}}" mode="center"></image>
+</view>
+
+<view>
+  <button bindtap="sendText" style="position: relative; left: 0rpx; top: 75rpx">发送文字</button>
+  
+  <button bindtap="sendImage" style="position: relative; left: 0rpx; top: 130rpx">发送图片</button>
+</view>
+
+</view>

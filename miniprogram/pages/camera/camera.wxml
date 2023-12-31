@@ -1,0 +1,5 @@
+<view class="container">
+  <camera device-position="back" flash="off" style="width: 100%; height: {{cameraHeight}};"></camera>
+  <button bindtap="takePhoto">拍照</button>
+  
+</view>

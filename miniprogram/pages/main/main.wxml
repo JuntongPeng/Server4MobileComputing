@@ -1,0 +1,4 @@
+<view class="container">
+  <button class="md-button" bindtap="navigateToCam">拍照</button>
+  <button class="md-button" bindtap="navigateToComm">传输</button>
+</view>

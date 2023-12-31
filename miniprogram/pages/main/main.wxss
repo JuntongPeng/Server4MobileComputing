@@ -1,0 +1,9 @@
+.md-button {
+  background-color: #6200EA; /* Material Design Purple 500 */
+  color: white;
+  padding: 10px;
+  margin: 10px 0;
+  border: none;
+  border-radius: 4px;
+  font-size: 16px;
+}
